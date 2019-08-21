@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CAD @sdelquin</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/1552f390da.js"></script>
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+  <div class="container" id="app">
+
+    <section class="header hero is-dark is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title"><i class="fas fa-drafting-compass"></i> CAD</h1>
+          <h2 class="subtitle">My projects on 3D. Models from Autodesk Fusion 360.</h2>
+        </div>
+      </div>
+    </section>
+
+    <div class="columns cad-selection">
+      <div class="column">
+        <div class="select">
+          <select v-model="selected_design">
+              <option disabled value="">Please select one design</option>
+              <option>custom/ball_end</option>
+              <option>custom/chair</option>
+              <option>custom/fidget_spinner</option>
+              <option>custom/flange_bearing</option>
+              <option>custom/inception_spinner</option>
+              <option>custom/lego_brick</option>
+              <option>custom/python_logo</option>
+              <option>custom/register_box</option>
+              <option>custom/screwdriver</option>
+            </select>
+        </div>
+      </div>
+      <div v-if="selected_design" class="column">
+        <h1 class="is-size-3">{{ selected_design }}</h1>
+      </div>
+    </div>
+
+    <div v-if="selected_design" class="columns">
+      <div class="column render">
+        <h1 class="title">Render</h1>
+        <a target="_blank" v-bind:href="'designs/' + selected_design + '/render.png'"><img v-bind:src="'designs/' + selected_design + '/render.png'"></a>
+      </div>
+      <div class="column drawing">
+        <h1 class="title">Drawing</h1>
+        <a target="_blank" v-bind:href="'designs/' + selected_design + '/drawing.pdf'"><img v-bind:src="'designs/' + selected_design + '/drawing.png'"></a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p class="is-size-7">
+        If you're interested in either Autodesk Fusion 360 (<kbd>.f3d</kbd>) or Standard Triangle Language (<kbd>.stl</kbd>) files of any design, do not hesitate to contact me <a href="mailto:sdelquin@gmail.com">here</a>.
+      </p>
+      <p>
+        Made with <i class="far fa-heart"></i> by <a href="http://sdelquin.me">Sergio Delgado Quintero</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="app.js"></script>
+
+</html>

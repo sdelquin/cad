@@ -1,0 +1,15 @@
+.cad-selection {
+  margin-top: 1rem;
+}
+
+footer {
+  margin-top: 4rem;
+}
+
+footer i {
+  color: red;
+}
+
+.drawing img {
+  border: 1px solid grey;
+}
