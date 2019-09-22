@@ -10,6 +10,7 @@ rope = "*"
 
 [packages]
 jinja2 = "*"
+colorful = "*"
 
 [requires]
 python_version = "3.7"
