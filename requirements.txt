@@ -1,2 +1,2 @@
-jinja2==2.11.1
+jinja2==2.11.3
 colorful==0.5.4
